@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thieu Van Bezooijen · Portfolio</title>
+    <meta name="description" content="Portfolio of Thieu Van Bezooijen: projects, experience, and contact information.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a href="#top" class="logo" aria-label="Home">TVB</a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </button>
+          <ul id="nav-menu" class="nav-menu">
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#projects">Projects</a></li>
+            <li><a class="nav-link" href="#experience">Experience</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">Theme</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Introduction">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <h1>Hi, I'm <span class="accent">Thieu</span>.</h1>
+            <p class="subtitle">I build clean, accessible web experiences.</p>
+            <div class="hero-cta">
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a class="btn" href="#contact">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="container">
+          <h2 id="about-title">About</h2>
+          <p>
+            I'm a developer who enjoys turning complex challenges into simple, beautiful, and intuitive designs.
+            I focus on performance, accessibility, and maintainability. When I'm not coding, you can find me exploring new tools,
+            contributing to open source, or refining UX details.
+          </p>
+          <ul class="skills">
+            <li>JavaScript / TypeScript</li>
+            <li>React / Next.js</li>
+            <li>Node.js</li>
+            <li>HTML / CSS</li>
+            <li>UI/UX & Accessibility</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="projects" class="section" aria-labelledby="projects-title">
+        <div class="container">
+          <h2 id="projects-title">Projects</h2>
+          <div class="projects-grid">
+            <article class="card project">
+              <div class="card-body">
+                <h3>Project One</h3>
+                <p>A concise description of a project highlighting problem, approach, and impact.</p>
+              </div>
+              <div class="card-footer">
+                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
+                <a class="btn small outline" href="#" target="_blank" rel="noopener">Code</a>
+              </div>
+            </article>
+            <article class="card project">
+              <div class="card-body">
+                <h3>Project Two</h3>
+                <p>Another project with a clear outcome, measurable results, and key learnings.</p>
+              </div>
+              <div class="card-footer">
+                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
+                <a class="btn small outline" href="#" target="_blank" rel="noopener">Code</a>
+              </div>
+            </article>
+            <article class="card project">
+              <div class="card-body">
+                <h3>Project Three</h3>
+                <p>A featured build focusing on performance, accessibility, and developer experience.</p>
+              </div>
+              <div class="card-footer">
+                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
+                <a class="btn small outline" href="#" target="_blank" rel="noopener">Code</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section" aria-labelledby="experience-title">
+        <div class="container">
+          <h2 id="experience-title">Experience</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h3>Senior Frontend Engineer</h3>
+                <p class="muted">2023 – Present · Company</p>
+                <p>Leading frontend architecture, design systems, and performance initiatives across product lines.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h3>Software Engineer</h3>
+                <p class="muted">2020 – 2023 · Company</p>
+                <p>Delivered full-stack features from concept to launch; collaborated with design and product.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section" aria-labelledby="contact-title">
+        <div class="container">
+          <h2 id="contact-title">Contact</h2>
+          <p>Want to collaborate or just say hi? Send a message.</p>
+          <form id="contact-form" novalidate>
+            <div class="form-grid">
+              <label class="form-field">
+                <span>Name</span>
+                <input id="name" name="name" type="text" placeholder="Your name" required>
+                <small class="error" id="error-name"></small>
+              </label>
+              <label class="form-field">
+                <span>Email</span>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required>
+                <small class="error" id="error-email"></small>
+              </label>
+              <label class="form-field full">
+                <span>Message</span>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me a bit..." required></textarea>
+                <small class="error" id="error-message"></small>
+              </label>
+            </div>
+            <div class="form-actions">
+              <button class="btn primary" type="submit">Send</button>
+              <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Thieu Van Bezooijen. All rights reserved.</p>
+        <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js" defer></script>
+  </body>
+  </html>
+
+
