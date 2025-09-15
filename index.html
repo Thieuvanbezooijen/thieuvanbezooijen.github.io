@@ -23,14 +23,14 @@
       </div>
       <div class="hero-right">
         <figure class="profile">
-          <img src="profile.jpg" alt="Portret van Thieu van Bezooijen" class="rounded hover-zoom" />
+          <img src="img/profile.jpg" alt="Portret van Thieu van Bezooijen" class="rounded hover-zoom" />
           <figcaption class="sr-only">Thieu van Bezooijen</figcaption>
         </figure>
         <ul class="contact-list" aria-label="Contact">
-          <li><a href="mailto:hello@example.com">hello@example.com</a></li>
-          <li><a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://instagram.com/yourusername" target="_blank" rel="noopener">Instagram</a></li>
-          <li><span class="location">Rotterdam, NL</span></li>
+          <li><a href="mailto:thieu@vanbezooijen.com">Thieu@vanbezooijen.com</a></li>
+          <li><a href="https://github.com/thieuvanbezooijen" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://instagram.com/thieu_076" target="_blank" rel="noopener">Instagram</a></li>
+          <li><span class="location">Breda, NL</span></li>
         </ul>
       </div>
     </div>
@@ -38,34 +38,57 @@
 
   <div class="divider" role="separator" aria-label="Sectiescheiding"></div>
 
-  <main id="work" class="site-main" aria-label="Portfolio">
-    <section class="portfolio-section">
-      <div class="container grid-2">
-        <article class="column left">
-          <div class="image-grid">
-            <img src="poster1.jpg" alt="Poster ontwerp 1" class="rounded hover-zoom" />
-            <img src="poster2.jpg" alt="Poster ontwerp 2" class="rounded hover-zoom" />
-          </div>
-          <header class="section-header">
-            <p class="tag">GRAPHIC DESIGN</p>
-            <h2 class="section-title">Tussen Aanhalingstekens</h2>
-          </header>
-          <p class="section-text">Een serie posterontwerpen waarin typografie en ritme centraal staan, geïnspireerd op citaten en dialogen.</p>
-        </article>
+  <main id="work" aria-label="Portfolio">
+    <!-- Project 1 (highlighted, dark) -->
 
-        <article class="column right">
-          <header class="section-header">
-            <p class="tag">GRAPHIC DESIGN</p>
-            <h2 class="section-title">Visuele identiteit en beleving</h2>
-          </header>
-          <p class="section-text">Van schets tot systeem: ik ontwikkel consistente identiteiten die merkverhaal en gebruikerservaring samenbrengen. Hieronder enkele mockups als voorproef.</p>
-          <div class="image-stack">
-            <img src="mockup.jpg" alt="Merk mockup 1" class="rounded hover-zoom" />
-            <img src="mockup.jpg" alt="Merk mockup 2" class="rounded hover-zoom" />
+        <!-- Project 3 (dark) -->
+        <section class="project project--dark project--with-video">
+          <video class="project-bg-video" src="img/Showcase.mov" poster="img/game3.png" autoplay muted loop playsinline></video>
+          <div class="container">
+            <header class="project-header">
+              <p class="tag">GRAPHIC DESIGN</p>
+              <h2 class="project-title">Game</h2>
+              <p class="project-text">Een mix van kaarten, schermen en posters met focus op grid, ritme en typografie.</p>
+            </header>
+            <div class="project-grid">
+              <img src="img/game.png" alt="Character" class="rounded hover-zoom" />
+              <img src="img/game2.png" alt="Assets" class="rounded hover-zoom" />
+            </div>
           </div>
-        </article>
+        </section>
+    
+
+    <!-- Project 2 (light) -->
+    <section class="project project--light">
+      <div class="container">
+        <header class="project-header">
+          <p class="tag">GRAPHIC DESIGN</p>
+          <h2 class="project-title">Visuele identiteit en beleving</h2>
+          <p class="project-text">Van schets tot systeem: consistente identiteiten die merkverhaal en gebruikerservaring samenbrengen.</p>
+        </header>
+        <div class="project-grid">
+          <img src="img/mockup1.png" alt="App mockup" class="rounded hover-zoom" />
+          <img src="img/mockup2.png" alt="Flyer mockup" class="rounded hover-zoom" />
+          <img src="img/mockup3.png" alt="Instagram mockup" class="rounded hover-zoom" />
+        </div>
       </div>
     </section>
+
+    <section class="project project--dark project--highlight">
+      <div class="container">
+        <header class="project-header">
+          <p class="tag">GRAPHIC DESIGN</p>
+          <h2 class="project-title">Tussen Aanhalingstekens</h2>
+          <p class="project-text">Een serie posterontwerpen waarin typografie en ritme centraal staan, geïnspireerd op citaten en dialogen.</p>
+        </header>
+        <div class="project-grid">
+          <img src="img/poster1.jpg" alt="Poster ontwerp 1" class="rounded hover-zoom" />
+          <img src="img/poster2.jpg" alt="Poster ontwerp 2" class="rounded hover-zoom" />
+          <img src="img/poster3.png" alt="Poster ontwerp 3" class="rounded hover-zoom" />
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">

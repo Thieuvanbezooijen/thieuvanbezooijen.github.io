@@ -1,3 +1,47 @@
+/* Minimal layout + image constraints to prevent overflow */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+/* Ensure all images are responsive and never overflow */
+img { max-width: 100%; height: auto; display: block; }
+
+/* Common helpers used in markup */
+.rounded { border-radius: 12px; overflow: hidden; }
+.hover-zoom { transition: transform .3s ease; }
+.hover-zoom:hover { transform: scale(1.02); }
+
+/* Simple grids for image groups */
+.image-grid { display: grid; gap: 16px; }
+.image-stack { display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); }
+
+/* Basic hero layout that won’t let images spill */
+.hero { display: grid; grid-template-columns: 1fr; gap: 24px; padding: 32px 0; }
+@media (min-width: 840px) { .hero { grid-template-columns: 1.1fr .9fr; align-items: center; } }
+
+.profile { margin: 0; }
+
+/* Simple section spacing */
+.site-main { padding: 24px 0 48px; }
+.portfolio-section { padding: 24px 0; }
+.grid-2 { display: grid; gap: 28px; }
+@media (min-width: 900px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+/* Divider block between sections */
+.divider { width: 100%; height: 56px; background: #e5e7eb; }
+
+/* Basic text styles */
+body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background: #0a0a0a; color: #f5f5f5; }
+.site-header { background: #0a0a0a; }
+.tag { display: inline-block; background: #f5f5f5; color: #0a0a0a; padding: 4px 10px; border-radius: 999px; font-size: 12px; letter-spacing: .06em; font-weight: 700; }
+.hero-title { font-size: clamp(32px, 6vw, 64px); line-height: 1.05; margin: 8px 0 12px; font-weight: 800; }
+.hero-bio, .section-text { color: #d1d5db; max-width: 60ch; }
+.section-title { color: #111827; font-size: 28px; margin: 8px 0; font-weight: 800; }
+.site-main { background: #f5f6f8; color: #111827; }
+.site-footer { padding: 20px 0 40px; background: #0a0a0a; color: #9ca3af; }
+
 /* Base */
 :root {
   --bg-dark: #0b0b0c;
@@ -104,13 +148,29 @@ body {
 }
 
 /* Portfolio */
-.site-main { background: var(--bg-light); }
-.portfolio-section { padding: 60px 0; }
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+/* Project sections */
+.project { padding: 56px 0; }
+.project--highlight { padding: 100px 0; }
+.project--dark { background: #0a0a0a; color: #f5f5f5; }
+.project--light { background: #ffffff; color: #111827; }
+.project--with-video { position: relative; overflow: hidden; }
+.project--with-video .container { position: relative; z-index: 1; }
+.project-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(14px) brightness(0.5);
+  transform: scale(1.08);
+  z-index: 0;
 }
+.project-header { margin-bottom: 18px; }
+.project-title { font-size: clamp(26px, 4vw, 40px); line-height: 1.15; font-weight: 800; margin: 6px 0; }
+.project-text { color: #9ca3af; max-width: 70ch; }
+.project--light .project-text { color: #4b5563; }
+.project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.project-grid img { width: 100%; height: auto; }
 
 .section-header { margin-bottom: 8px; }
 .section-title {
@@ -121,12 +181,8 @@ body {
 }
 .section-text { color: var(--muted); max-width: 60ch; }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
-}
+/* Legacy grid retained for hero posters if needed */
+.image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
 
 .image-stack img + img { margin-top: 14px; }
 
@@ -145,8 +201,8 @@ body {
 }
 
 @media (max-width: 720px) {
-  .grid-2 { grid-template-columns: 1fr; }
   .image-grid { grid-template-columns: 1fr; }
+  .project-grid { grid-template-columns: 1fr; }
 }
 
 

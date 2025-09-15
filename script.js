@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const year = document.getElementById('year');
+  if (year) year.textContent = String(new Date().getFullYear());
+});
+
 // Minimal interactivity: hover/touch zoom and current year
 (function () {
   const year = document.getElementById('year');
