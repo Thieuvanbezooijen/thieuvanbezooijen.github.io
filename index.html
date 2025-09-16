@@ -12,7 +12,7 @@
 </head>
 <body>
   <header class="site-header" aria-label="Intro">
-    <div class="container hero">
+    <div class="container hero reveal">
       <div class="hero-left">
         <p class="tag">INTERACTIVE DESIGNER</p>
         <h1 class="hero-title">
@@ -42,7 +42,7 @@
     <!-- Project 1 (highlighted, dark) -->
 
         <!-- Project 3 (dark) -->
-        <section class="project project--dark project--with-video">
+        <section class="project project--dark project--with-video reveal">
           <video class="project-bg-video" src="img/Showcase.mov" poster="img/game3.png" autoplay muted loop playsinline></video>
           <div class="container">
             <header class="project-header">
@@ -62,7 +62,7 @@
     
 
     <!-- Project 2 (light) -->
-    <section class="project project--light project--with-bg project--with-side">
+    <section class="project project--light project--with-bg project--with-side reveal">
       <img class="project-bg-image" src="img/mockup2.png" alt="Achtergrond mockup" aria-hidden="true" />
       <div class="container">
         <header class="project-header">
@@ -73,7 +73,6 @@
         <div class="project-grid">
           <img src="img/mockup1.png" alt="App mockup" class="rounded hover-zoom" />
           <img src="img/mockup2.png" alt="Flyer mockup" class="rounded hover-zoom" />
-          <img src="img/mockup3.png" alt="Instagram mockup" class="rounded hover-zoom" />
         </div>
         <aside class="project-side">
           <img src="img/mockup3.png" alt="Zijbeeld Instagram mockup" class="rounded hover-zoom" />
@@ -81,7 +80,7 @@
       </div>
     </section>
 
-    <section class="project project--dark project--highlight">
+    <section class="project project--dark project--highlight reveal">
       <div class="container">
         <header class="project-header">
           <p class="tag">GRAPHIC DESIGN</p>
@@ -103,6 +102,12 @@
       <small>© <span id="year"></span> Thieu van Bezooijen</small>
     </div>
   </footer>
+
+  <!-- Lightbox overlay -->
+  <div id="lightbox" class="lightbox" aria-modal="true" role="dialog" hidden>
+    <div class="lightbox-backdrop" data-close></div>
+    <img id="lightbox-img" alt="Vergrote afbeelding" />
+  </div>
 
   <script src="script.js"></script>
 </body>
