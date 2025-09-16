@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const backdrop = lightbox ? lightbox.querySelector('[data-close]') : null;
-  const images = Array.from(document.querySelectorAll('.project-grid img, .project-side img'));
+  const images = Array.from(document.querySelectorAll('.project-grid img, .project-side img, .profile img'));
 
   const openLightbox = (src, alt) => {
     if (!lightbox || !lightboxImg) return;
