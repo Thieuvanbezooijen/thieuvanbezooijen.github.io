@@ -160,8 +160,8 @@ body {
 .project--light { background: #ffffff; color: #111827; }
 .project--light.project--with-bg { color: #ffffff; }
 .project--light.project--with-bg .project-text { color: #f3f4f6; }
-.project--with-video { position: relative; overflow: hidden; }
-.project--with-video .container { position: relative; z-index: 1; }
+.project--with-video { position: relative; overflow: hidden; min-height: clamp(420px, 60vh, 720px); }
+.project--with-video .container { position: relative; z-index: 1; min-height: inherit; display: flex; flex-direction: column; justify-content: center; }
 .project-bg-video {
   position: absolute;
   inset: 0;

@@ -6,8 +6,22 @@
     <title>Unity WebGL Player | Stringstar Escape</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <style>
+      :root { color-scheme: dark; }
+      html, body { margin: 0; padding: 0; height: 100%; }
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background: #0a0a0a; color: #e5e7eb; }
+      header { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 14px; background: #0a0a0a; border-bottom: 1px solid #1f2937; }
+      .title { font-weight: 800; letter-spacing: .25px; }
+      .btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; border: 1px solid #374151; background: #111827; color: #f9fafb; text-decoration: none; font-weight: 700; }
+      .btn:hover { opacity: .9; }
+      /* Leave canvas positioning/size to Unity TemplateData CSS */
+    </style>
   </head>
   <body>
+    <header>
+      <span class="title">Unity WebGL – Stringstar Escape</span>
+      <a class="btn" href="../index.html">← Back to portfolio</a>
+    </header>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
