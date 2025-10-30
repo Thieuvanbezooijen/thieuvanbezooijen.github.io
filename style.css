@@ -69,6 +69,9 @@ body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   color: var(--text);
   background: var(--bg-light);
+  /* 50% black overlay */
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+  background-blend-mode: multiply;
   line-height: 1.6;
 }
 
@@ -216,6 +219,14 @@ body {
 .project--with-bg .project-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .project--with-bg .project-grid img { aspect-ratio: 3 / 4; object-fit: cover; }
 
+/* Compact project variant to keep section height similar to others */
+.project--compact .project-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.project--compact .project-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain; /* ensure full image fits inside the frame */
+}
+
 .section-header { margin-bottom: 8px; }
 .section-title {
   margin: 8px 0 8px;
@@ -257,6 +268,14 @@ body {
   }
 }
 
+.project-text-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.project-text-link:hover {
+  text-decoration: underline;
+}
 .lightbox[hidden] { display: none !important; }
 .lightbox {
   position: fixed;
@@ -270,20 +289,48 @@ body {
 .lightbox-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,.50);
+  background: rgba(0,0,0,0); /* keep only blur visually */
   backdrop-filter: blur(3px);
 }
-#lightbox-img {
+/* Darker backdrop variant for specific items */
+.lightbox.dark .lightbox-backdrop { background: rgba(0, 0, 0, 0.608); }
+.lightbox-content {
   position: relative;
   max-width: min(92vw, 1400px);
   max-height: 90vh;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0,0,0,.5);
-  transform: scale(.98);
-  transition: transform .25s ease;
+  overflow: hidden;
+}
+#lightbox .lightbox-controls {
+  position: absolute; top: 8px; right: 8px; z-index: 2;
+}
+.zoom-btn {
+  appearance: none; border: 1px solid rgba(255,255,255,.25); background: rgba(17,24,39,.6);
+  color: #fff; border-radius: 999px; padding: 6px 10px; cursor: pointer; font-weight: 700;
+}
+.zoom-btn:hover { background: rgba(17,24,39,.8); }
+#lightbox-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: zoom-in;
 }
 .lightbox.open { opacity: 1; }
-.lightbox.open #lightbox-img { transform: scale(1); }
+.lightbox.open #lightbox-img { }
+/* Pan when zoomed */
+.lightbox-content.zoomed { overflow: auto; cursor: grab; }
+#lightbox-img.zoomed {
+  max-width: none;
+  max-height: none;
+  width: 110%;
+  height: auto;
+  cursor: inherit;
+}
+.lightbox-content.zoomed:active { cursor: grabbing; }
+
+/* Zoomed-in state for lightbox image */
+/* removed transform-based zoom in favor of scrollable pan */
 
 /* Reveal on scroll */
 @media (prefers-reduced-motion: no-preference) {
