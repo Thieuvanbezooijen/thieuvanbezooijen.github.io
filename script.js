@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxContent = document.getElementById('lightbox-content');
   const backdrop = lightbox ? lightbox.querySelector('[data-close]') : null;
-  const images = Array.from(document.querySelectorAll('.project-grid img, .project-side img, .profile img'));
+  const images = Array.from(document.querySelectorAll('.project-grid img, .project-side img, .project-grid-rcs img, .project-side-rcs img, .project-grid-branding img, .project-side-branding img, .project-grid-bold-bottom img, .project-side-bold img, .profile img'));
 
   const openLightbox = (src, alt, zoomPercent, darkBackdrop) => {
     if (!lightbox || !lightboxImg) return;
@@ -127,6 +127,42 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
     revealEls.forEach((el) => observer.observe(el));
+  }
+
+  // Scroll to top button
+  const scrollToTopBtn = document.getElementById('scroll-to-top');
+  if (scrollToTopBtn) {
+    const SCROLL_THRESHOLD = 300; // Show button after scrolling 300px
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY || document.documentElement.scrollTop;
+          if (scrollY > SCROLL_THRESHOLD) {
+            scrollToTopBtn.removeAttribute('hidden');
+          } else {
+            scrollToTopBtn.setAttribute('hidden', '');
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    // Check initial scroll position
+    handleScroll();
+
+    // Listen for scroll events
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Smooth scroll to top on click
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
   }
 });
 

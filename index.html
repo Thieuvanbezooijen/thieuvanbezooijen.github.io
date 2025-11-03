@@ -61,20 +61,24 @@
     
 
     <!-- Project X (light) -->
-    <section class="project project--light project--with-bg project--compact reveal">
+    <section class="project project--light project--with-bg project--rcs reveal">
       <img class="project-bg-image" src="./img/rcs_background.jpg" alt="Achtergrond RCS" aria-hidden="true" />
       <div class="container">
-        <header class="project-header">
-          <p class="tag">INTERACTIVE DESIGN</p>
-          <h2 class="project-title">RCS Toepassing voor Intents</h2>
-          <p class="project-text">Een Figma prototype van een RCStoepassing voor Intents. Dit is een proof of concept in samenwerking met designstudio <a class="project-text-link" href="https://mobilewater.nl/rcs" target="_blank" rel="noopener">Mobile Water</a></p>
-          
-        </header>
-        <div class="project-grid">
-          
-          <img src="./img/rcs_1_preview.png" alt="Interactief prototype 1" class="rounded hover-zoom" data-fullsrc="./img/rcs_1.png" data-backdrop-dark />
-          <img src="./img/rcs_2_preview.png" alt="Interactief prototype 2" class="rounded hover-zoom" data-fullsrc="./img/rcs_2.png" data-backdrop-dark />
-          <img src="./img/rcs_3_preview.png" alt="Interactief prototype 3" class="rounded hover-zoom" data-fullsrc="./img/rcs_3.png" data-backdrop-dark />
+        <div class="project-layout-rcs">
+          <div class="project-content-rcs">
+            <header class="project-header">
+              <p class="tag">INTERACTIVE DESIGN</p>
+              <h2 class="project-title">RCS Toepassing voor Intents</h2>
+              <p class="project-text">Een interactieve, marketing gerichte toepassing voor RCS. In opdracht van  <a class="project-text-link" href="https://mobilewater.nl/rcs" target="_blank" rel="noopener">Mobile Water</a></p>
+            </header>
+            <div class="project-grid-rcs">
+              <img src="./img/rcs_3_preview.png" alt="Interactief prototype 1" class="rcs-img rounded hover-zoom" data-fullsrc="./img/rcs_1.png" data-backdrop-dark />
+              <img src="./img/rcs_2_preview.png" alt="Interactief prototype 2" class="rcs-img rounded hover-zoom" data-fullsrc="./img/rcs_2.png" data-backdrop-dark />
+            </div>
+          </div>
+          <aside class="project-side-rcs">
+            <img src="./img/rcs_1_preview.png" alt="Interactief prototype 3" class="rcs-img rounded hover-zoom" data-fullsrc="./img/rcs_3.png" data-backdrop-dark />
+          </aside>
         </div>
       </div>
     </section>
@@ -89,28 +93,37 @@
           <h2 class="project-title">Visuele identiteit en beleving</h2>
           <p class="project-text">Van schets tot merk: consistente identiteiten die merkverhaal en gebruikerservaring samenbrengen.</p>
         </header>
-        <div class="project-grid">
-          <img src="./img/mockup1.png" alt="App mockup" class="rounded hover-zoom" />
-          <img src="./img/mockup2.png" alt="Flyer mockup" class="rounded hover-zoom" />
+        <div class="project-grid-branding">
+          <img src="./img/mockup1.png" alt="App mockup" class="branding-img rounded hover-zoom" />
+          <img src="./img/mockup2.png" alt="Flyer mockup" class="branding-img rounded hover-zoom" />
         </div>
-        <aside class="project-side">
-          <img src="./img/mockup3.png" alt="Zijbeeld Instagram mockup" class="rounded hover-zoom" />
+        <aside class="project-side-branding">
+          <img src="./img/mockup3.png" alt="Zijbeeld Instagram mockup" class="branding-img rounded hover-zoom" />
         </aside>
       </div>
     </section>
     <div class="divider" role="separator" aria-label="Sectiescheiding"></div>
 
-    <section class="project project--dark project--highlight reveal">
+    <!-- Bold Website section -->
+    <section class="project project--light project--with-bg project--bold reveal">
+      <img class="project-bg-image" src="./img/bold_background.jpg" alt="Achtergrond Bold" aria-hidden="true" />
       <div class="container">
-        <header class="project-header">
-          <p class="tag">GRAPHIC DESIGN</p>
-          <h2 class="project-title">Tussen Aanhalingstekens</h2>
-          <p class="project-text">Een serie posterontwerpen waarin typografie en design centraal staan, geïnspireerd op citaten.</p>
-        </header>
-        <div class="project-grid">
-          <img src="./img/poster1.png" alt="Poster ontwerp 1" class="rounded hover-zoom" />
-          <img src="./img/poster2.png" alt="Poster ontwerp 2" class="rounded hover-zoom" />
-          <img src="./img/poster3.png" alt="Poster ontwerp 3" class="rounded hover-zoom" />
+        <div class="project-layout-bold">
+          <div class="project-content-bold">
+            <header class="project-header">
+              <p class="tag">WEB DESIGN</p>
+              <h2 class="project-title">BOLD Website</h2>
+              <p class="project-text">Een website voor Studievereniging BOLD. High tech, high traffic, high expectations.</p>
+            </header>
+            <div class="project-grid-bold-bottom">
+              <img src="./img/bold_3.png" alt="Bold website 3" class="bold-img rounded hover-zoom" />
+            </div>
+          </div>
+          <aside class="project-side-bold">
+            <iframe src="https://thieuvanbezooijen.nl/Bold-website-github" width="100%" height="300" class="bold-iframe rounded">
+              <p>Your browser does not support iframes.</p>
+            </iframe>
+          </aside>
         </div>
       </div>
     </section>
@@ -139,6 +152,14 @@
       <img id="lightbox-img" alt="Vergrote afbeelding" />
     </div>
   </div>
+
+  <!-- Scroll to top button -->
+  <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top" hidden>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+    <span>Back to top</span>
+  </button>
 
   <script src="./script.js"></script>
 </body>

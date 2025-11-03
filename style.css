@@ -219,12 +219,98 @@ body {
 .project--with-bg .project-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .project--with-bg .project-grid img { aspect-ratio: 3 / 4; object-fit: cover; }
 
-/* Compact project variant to keep section height similar to others */
-.project--compact .project-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.project--compact .project-grid img {
+/* RCS section layout: 2 horizontal images beneath text, 1 vertical next to text */
+.project--rcs .project-layout-rcs {
+  display: grid;
+  grid-template-columns: 1fr clamp(220px, 28vw, 360px);
+  gap: 32px;
+  align-items: start;
+}
+.project-content-rcs { display: flex; flex-direction: column; gap: 20px; }
+.project-grid-rcs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.rcs-img {
   width: 100%;
-  height: 260px;
-  object-fit: contain; /* ensure full image fits inside the frame */
+  height: auto;
+  border-radius: var(--radius);
+}
+.project-side-rcs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.project-side-rcs .rcs-img {
+  width: 100%;
+  height: auto;
+}
+
+/* Branding section layout: keep existing layout, just update class names */
+.project-grid-branding {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.branding-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+.project-side-branding {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: clamp(220px, 28vw, 360px);
+  padding: 24px 16px;
+  display: flex;
+  align-items: stretch;
+}
+.project-side-branding .branding-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bold section layout: 2 vertical images next to text, 1 horizontal beneath text */
+.project--bold .project-layout-bold {
+  display: grid;
+  grid-template-columns: 1fr clamp(220px, 28vw, 360px);
+  gap: 32px;
+  align-items: stretch; /* Match height of both columns */
+}
+.project-content-bold { display: flex; flex-direction: column; gap: 20px; }
+.project-grid-bold-bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.bold-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+.project-side-bold {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%; /* Fill available height */
+}
+.project-side-bold .bold-img {
+  width: 85%;
+  height: auto;
+}
+.bold-iframe {
+  width: 100%;
+  height: 100%; /* Fill available height of parent */
+  min-height: 300px; /* Minimum height for readability */
+  border: none;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .section-header { margin-bottom: 8px; }
@@ -317,7 +403,6 @@ body {
   cursor: zoom-in;
 }
 .lightbox.open { opacity: 1; }
-.lightbox.open #lightbox-img { }
 /* Pan when zoomed */
 .lightbox-content.zoomed { overflow: auto; cursor: grab; }
 #lightbox-img.zoomed {
@@ -351,6 +436,16 @@ body {
   .project--with-side .container { padding-right: 16px; }
   .project-side { position: static; width: auto; height: auto; padding: 0; margin-top: 12px; }
   .project-side img { height: auto; }
+  /* RCS layout responsive */
+  .project--rcs .project-layout-rcs { grid-template-columns: 1fr; }
+  .project-side-rcs { margin-top: 16px; }
+  /* Branding layout responsive */
+  .project-side-branding { position: static; width: auto; height: auto; padding: 0; margin-top: 16px; }
+  .project-side-branding .branding-img { height: auto; }
+  /* Bold layout responsive */
+  .project--bold .project-layout-bold { grid-template-columns: 1fr; }
+  .project-side-bold { margin-top: 16px; }
+  .bold-iframe { height: 250px; }
 }
 
 .btn {
@@ -370,5 +465,49 @@ body {
 .btn--light:hover { opacity: .90; }
 .btn--dark { background: #111827; color: #f5f5f5; border-color: #1f2937; }
 .btn--dark:hover { opacity: .95; }
+
+/* Scroll to top button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 998; /* Below lightbox (999) but above most content */
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #000000;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  opacity: 0;
+  transform: translateY(10px) scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+  pointer-events: none;
+}
+.scroll-to-top:not([hidden]) {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.scroll-to-top:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-2px) scale(1.05);
+}
+.scroll-to-top:active {
+  transform: translateY(0) scale(1);
+}
+.scroll-to-top svg {
+  display: block;
+  flex-shrink: 0;
+}
+.scroll-to-top span {
+  white-space: nowrap;
+}
 
 
