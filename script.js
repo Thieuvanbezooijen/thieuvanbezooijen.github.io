@@ -2,12 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  // Disable game button on mobile devices
+  const gameBtn = document.querySelector('.game-btn');
+  if (gameBtn && window.innerWidth <= 768) {
+    gameBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      return false;
+    });
+    gameBtn.setAttribute('href', '#');
+  }
+
   // Lightbox setup
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxContent = document.getElementById('lightbox-content');
   const backdrop = lightbox ? lightbox.querySelector('[data-close]') : null;
-  const images = Array.from(document.querySelectorAll('.project-grid img, .project-side img, .project-grid-rcs img, .project-side-rcs img, .project-grid-branding img, .project-side-branding img, .project-grid-bold-bottom img, .project-side-bold img, .profile img'));
+  const images = Array.from(document.querySelectorAll('.project-grid img, .project-side img, .project-grid-rcs img, .project-side-rcs img, .project-grid-branding img, .project-side-branding img, .project-grid-bold-bottom img, .project-side-bold img, .profile img, .hero-img'));
 
   const openLightbox = (src, alt, zoomPercent, darkBackdrop) => {
     if (!lightbox || !lightboxImg) return;
@@ -115,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Reveal-on-scroll animations
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!prefersReduced) {
     const revealEls = Array.from(document.querySelectorAll('.reveal, .reveal-stagger'));
     const observer = new IntersectionObserver((entries) => {
@@ -127,6 +137,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
     revealEls.forEach((el) => observer.observe(el));
+  } */
+
+  // Collapsible text for discursive design
+  const discursiveToggle = document.getElementById('discursive-text-toggle');
+  const discursiveCollapsible = document.getElementById('discursive-text-collapsible');
+  if (discursiveToggle && discursiveCollapsible) {
+    discursiveToggle.addEventListener('click', () => {
+      const isExpanded = discursiveToggle.getAttribute('aria-expanded') === 'true';
+      discursiveToggle.setAttribute('aria-expanded', !isExpanded);
+      discursiveCollapsible.classList.toggle('expanded');
+    });
   }
 
   // Scroll to top button
