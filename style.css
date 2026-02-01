@@ -439,6 +439,14 @@ body {
   text-decoration: underline;
 }
 
+/* Default: show desktop text, hide mobile text */
+.project-text-visible.project-text-desktop {
+  display: block;
+}
+.project-text-visible.project-text-mobile {
+  display: none;
+}
+
 .section-header { margin-bottom: 8px; }
 .section-title {
   margin: 8px 0 8px;
@@ -589,6 +597,14 @@ body {
 .game-btn-text-desktop {
   display: inline;
 }
+
+.prototype-btn-text-mobile {
+  display: none;
+}
+.prototype-btn-text-desktop {
+  display: inline;
+}
+
 @media (max-width: 768px) {
   .game-btn {
     background: #6b7280 !important;
@@ -606,6 +622,25 @@ body {
     display: none;
   }
   .game-btn-text-mobile {
+    display: inline;
+  }
+
+  .prototype-btn {
+    background: #6b7280 !important;
+    color: #ffffff !important;
+    border-color: #4b5563 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+  .prototype-btn:hover {
+    transform: none;
+    opacity: 0.6;
+  }
+  .prototype-btn-text-desktop {
+    display: none;
+  }
+  .prototype-btn-text-mobile {
     display: inline;
   }
 
@@ -677,6 +712,12 @@ body {
     display: none;
   }
   .project--discursive .project-text-mobile {
+    display: block;
+  }
+  .project--discursive .project-text-visible.project-text-desktop {
+    display: none;
+  }
+  .project--discursive .project-text-visible.project-text-mobile {
     display: block;
   }
   .project--discursive .project-bg-image {
