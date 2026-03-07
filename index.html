@@ -48,8 +48,32 @@
 
   <main id="work" aria-label="Portfolio">
     <!-- Project 1 (highlighted, dark) -->
+    <section class="project project--dark project--with-video reveal">
+      <video class="project-bg-video"  autoplay muted loop playsinline>
+        <source src="./img/Showcase.mp4" type="video/mp4">
+        <source src="./img/Showcase.mov" type="video/quicktime">
+      </video>
+      <div class="container">
+        <header class="project-header">
+          <p class="tag">GAME DESIGN</p>
+          <h2 class="project-title">Stringstar Escape</h2>
+          <p class="project-text">Een platformer  gemaakt in Unity met een focus op eenvoudige gameplay en visuele stijl.</p>
+          <div class="project-actions">
+            <a class="btn btn--light game-btn" href="./unity/index.html" target="_blank" rel="noopener">
+              <span class="game-btn-text-desktop">Speel game →</span>
+              <span class="game-btn-text-mobile">Speelbare demo is alleen beschikbaar op desktop!</span>
+            </a>
+          </div>
+        </header>
+        <div class="project-grid">
 
+        </div>
+      </div>
+    </section>
     <!-- Bold Website section -->
+    
+    <div class="divider" role="separator" aria-label="Sectiescheiding"></div>
+    
     <section class="project project--light project--with-bg project--bold reveal">
       <img class="project-bg-image" src="./img/bold_background.jpg" alt="Achtergrond Bold" aria-hidden="true" />
       <div class="container">
@@ -78,72 +102,48 @@
         </div>
       </div>
     </section>
-    <div class="divider" role="separator" aria-label="Sectiescheiding"></div>
     
-    <!-- Discursive Design section -->
-    <section class="project project--dark project--with-bg project--discursive reveal">
-      <img class="project-bg-image" src="./img/discursive3.jpg" alt="Achtergrond Discursive" aria-hidden="true" />
-      <div class="container">
-        <header class="project-header">
-          <p class="tag">DISCURSIVE DESIGN</p>
-          <h2 class="project-title">Mycobond Society</h2>
-          <div class="project-text">
-            <p class="project-text-visible project-text-desktop">Dit project onderzoekt hoe in de huidige samenleving wordt gesproken over sociale verbondenheid. We leven in een tijd waarin contact en relaties steeds zichtbaarder en meetbaarder zijn geworden. Via sociale media, netwerken en digitale platforms wordt verbondenheid vaak afgemeten aan hoeveel contact iemand heeft en hoe zichtbaar dat contact is. Wie weinig sociale interactie toont, kan al snel worden gezien als eenzaam of sociaal tekortschietend. Vanuit dit discours neem ik de positie in dat verbondenheid steeds vaker wordt beoordeeld aan de buitenkant, terwijl de innerlijke ervaring onderbelicht blijft.</p>
-            <p class="project-text-visible project-text-mobile">Dit project onderzoekt hoe in de huidige samenleving wordt gesproken over sociale verbondenheid. Via sociale media wordt verbondenheid vaak afgemeten aan hoeveel contact iemand heeft en hoe zichtbaar dat contact is. Vanuit dit discours neem ik de positie in dat verbondenheid steeds vaker wordt beoordeeld aan de buitenkant, terwijl de innerlijke ervaring onderbelicht blijft.</p>
-            <div class="project-text-collapsible" id="discursive-text-collapsible">
-              <p>Onderzoek laat zien dat sociale verbondenheid belangrijk is voor gezondheid en welzijn. De World Health Organization benadrukt dat sterke sociale relaties bijdragen aan een langer en gezonder leven, terwijl eenzaamheid en sociale isolatie juist risico's vormen voor zowel mentale als fysieke gezondheid<sup><a href="#ref1" class="citation-link">1</a></sup>.</p>
-              <p>Tegelijkertijd ervaren veel mensen juist meer eenzaamheid, ondanks dat zij online sterk verbonden lijken. Volgens cijfers van Our World in Data voelt een groot deel van de wereldbevolking zich regelmatig eenzaam, met name jongeren<sup><a href="#ref2" class="citation-link">2</a></sup>. Dit laat zien dat meer contact niet automatisch betekent dat mensen zich ook meer verbonden voelen.</p>
-              <p>Ook onderzoek van het Pew Research Center toont aan dat mensen hun sociale relaties vooral zien als bron van emotionele steun<sup><a href="#ref3" class="citation-link">3</a></sup>. Vrienden, partners en familie zijn belangrijk om gevoelens te delen en steun te krijgen. Tegelijkertijd blijkt dat sociale media deze relaties zowel kunnen versterken als onder druk zetten, doordat vergelijking en zichtbaarheid zorgen voor extra sociale druk<sup><a href="#ref4" class="citation-link">4</a></sup>.</p>
-              <p>Verbondenheid wordt hierdoor iets dat niet alleen gevoeld, maar ook getoond moet worden.</p>
-              <p>Binnen dit discours is weinig ruimte voor negatieve of ongemakkelijke kanten van relaties, zoals conflict, afstand of haat. Relaties worden vaak beoordeeld als "goed" of "slecht", waarbij spanningen snel als probleem worden gezien. Hierdoor ontstaat het idee dat verbondenheid altijd positief en wederzijds moet zijn, terwijl dit in werkelijkheid vaak complexer is.</p>
-              <p>Vanuit deze context is mijn worlding ontstaan. In deze wereld wordt sociale verbondenheid letterlijk zichtbaar via een schimmel / wortel netwerk dat tussen mensen groeit. Liefde, neutraliteit en haat krijgen elk een eigen vorm in het mycelium. Sommige verbindingen zijn sterk en voedend, andere zijn zwak, scheef of verstikkend. De schimmel heeft hierbij een eigen invloed en laat zien dat relaties niet volledig door mensen te sturen zijn.</p>
-              <p>Deze worlding maakt het dominante discours tastbaar. Door verbondenheid fysiek zichtbaar te maken, confronteert het project de gebruiker met vragen over privacy, sociale druk en controle. Het laat zien hoe de drang naar zichtbare verbondenheid kan leiden tot verlies van nuance en persoonlijke vrijheid. Zo nodigt mijn worlding uit om anders te kijken naar wat het betekent om verbonden te zijn.</p>
-              <div class="references" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                <p style="font-size: 13px; color: #9ca3af; line-height: 1.8;">
-                  <span id="ref1" style="display: inline-block; margin-right: 8px;">1.</span> World Health Organization. (2025, 30 juni). <em>Social connection linked to improved health and reduced risk of early death</em>. <a href="https://www.who.int/philippines/news/detail-global/30-06-2025-social-connection-linked-to-improved-heath-and-reduced-risk-of-early-death" target="_blank" rel="noopener" class="citation-link" style="color: #9ca3af; text-decoration: underline;">https://www.who.int/philippines/news/detail-global/30-06-2025-social-connection-linked-to-improved-heath-and-reduced-risk-of-early-death</a><br>
-                  <span id="ref2" style="display: inline-block; margin-right: 8px;">2.</span> Our World in Data. (2025). <em>Loneliness and social connections</em>. <a href="https://ourworldindata.org/social-connections-and-loneliness" target="_blank" rel="noopener" class="citation-link" style="color: #9ca3af; text-decoration: underline;">https://ourworldindata.org/social-connections-and-loneliness</a><br>
-                  <span id="ref3" style="display: inline-block; margin-right: 8px;">3.</span> Pew Research Center. (2025, 16 januari). <em>Where men and women turn for emotional support and social connection</em>. <a href="https://www.pewresearch.org/2025/01/16/where-men-and-women-turn-for-emotional-support-and-social-connection/" target="_blank" rel="noopener" class="citation-link" style="color: #9ca3af; text-decoration: underline;">https://www.pewresearch.org/2025/01/16/where-men-and-women-turn-for-emotional-support-and-social-connection/</a><br>
-                  <span id="ref4" style="display: inline-block; margin-right: 8px;">4.</span> Pew Research Center. (2025, 22 april). <em>Social media and teens' mental health</em>. <a href="https://www.pewresearch.org/internet/2025/04/22/teens-social-media-and-mental-health/" target="_blank" rel="noopener" class="citation-link" style="color: #9ca3af; text-decoration: underline;">https://www.pewresearch.org/internet/2025/04/22/teens-social-media-and-mental-health/</a>
-                </p>
-              </div>
-            </div>
-            <button class="project-text-toggle" id="discursive-text-toggle" aria-expanded="false">
-              <span class="toggle-text-expand">Lees complete essay</span>
-              <span class="toggle-text-collapse">Lees minder</span>
-            </button>
-              <div class="project-actions" style="margin-top: 20px;">
-                <a class="btn btn--light prototype-btn" href="https://thieuvanbezooijen.nl/Discursive" target="_blank" rel="noopener">
-                  <span class="prototype-btn-text-desktop">Visualisatie bekijken →</span>
-                  <span class="prototype-btn-text-mobile">Visualisatie is alleen beschikbaar op desktop!</span>
-                </a>
-              </div>
-          </div>
-        </header>
-      </div>
-    </section>
     <div class="divider" role="separator" aria-label="Sectiescheiding"></div>
 
         <!-- Project 3 (dark) -->
-        <section class="project project--dark project--with-video reveal">
-          <video class="project-bg-video"  autoplay muted loop playsinline>
-            <source src="./img/Showcase.mp4" type="video/mp4">
-            <source src="./img/Showcase.mov" type="video/quicktime">
-          </video>
+        <section class="project project--dark project--with-bg project--discursive reveal">
+          <img class="project-bg-image" src="./img/discursive3.jpg" alt="Achtergrond Discursive" aria-hidden="true" />
           <div class="container">
             <header class="project-header">
-              <p class="tag">GAME DESIGN</p>
-              <h2 class="project-title">Stringstar Escape</h2>
-              <p class="project-text">Een platformer  gemaakt in Unity met een focus op eenvoudige gameplay en visuele stijl.</p>
-              <div class="project-actions">
-                <a class="btn btn--light game-btn" href="./unity/index.html" target="_blank" rel="noopener">
-                  <span class="game-btn-text-desktop">Speel game →</span>
-                  <span class="game-btn-text-mobile">Speelbare demo is alleen beschikbaar op desktop!</span>
-                </a>
+              <p class="tag">DISCURSIVE DESIGN</p>
+              <h2 class="project-title">Mycobond Society</h2>
+              <div class="project-text">
+                <p class="project-text-visible project-text-desktop">Dit project onderzoekt hoe in de huidige samenleving wordt gesproken over sociale verbondenheid. We leven in een tijd waarin contact en relaties steeds zichtbaarder en meetbaarder zijn geworden. Via sociale media, netwerken en digitale platforms wordt verbondenheid vaak afgemeten aan hoeveel contact iemand heeft en hoe zichtbaar dat contact is. Wie weinig sociale interactie toont, kan al snel worden gezien als eenzaam of sociaal tekortschietend. Vanuit dit discours neem ik de positie in dat verbondenheid steeds vaker wordt beoordeeld aan de buitenkant, terwijl de innerlijke ervaring onderbelicht blijft.</p>
+                <p class="project-text-visible project-text-mobile">Dit project onderzoekt hoe in de huidige samenleving wordt gesproken over sociale verbondenheid. Via sociale media wordt verbondenheid vaak afgemeten aan hoeveel contact iemand heeft en hoe zichtbaar dat contact is. Vanuit dit discours neem ik de positie in dat verbondenheid steeds vaker wordt beoordeeld aan de buitenkant, terwijl de innerlijke ervaring onderbelicht blijft.</p>
+                <div class="project-text-collapsible" id="discursive-text-collapsible">
+                  <p>Onderzoek laat zien dat sociale verbondenheid belangrijk is voor gezondheid en welzijn. De World Health Organization benadrukt dat sterke sociale relaties bijdragen aan een langer en gezonder leven, terwijl eenzaamheid en sociale isolatie juist risico's vormen voor zowel mentale als fysieke gezondheid<sup><a href="#ref1" class="citation-link">1</a></sup>.</p>
+                  <p>Tegelijkertijd ervaren veel mensen juist meer eenzaamheid, ondanks dat zij online sterk verbonden lijken. Volgens cijfers van Our World in Data voelt een groot deel van de wereldbevolking zich regelmatig eenzaam, met name jongeren<sup><a href="#ref2" class="citation-link">2</a></sup>. Dit laat zien dat meer contact niet automatisch betekent dat mensen zich ook meer verbonden voelen.</p>
+                  <p>Ook onderzoek van het Pew Research Center toont aan dat mensen hun sociale relaties vooral zien als bron van emotionele steun<sup><a href="#ref3" class="citation-link">3</a></sup>. Vrienden, partners en familie zijn belangrijk om gevoelens te delen en steun te krijgen. Tegelijkertijd blijkt dat sociale media deze relaties zowel kunnen versterken als onder druk zetten, doordat vergelijking en zichtbaarheid zorgen voor extra sociale druk<sup><a href="#ref4" class="citation-link">4</a></sup>.</p>
+                  <p>Verbondenheid wordt hierdoor iets dat niet alleen gevoeld, maar ook getoond moet worden.</p>
+                  <p>Binnen dit discours is weinig ruimte voor negatieve of ongemakkelijke kanten van relaties, zoals conflict, afstand of haat. Relaties worden vaak beoordeeld als "goed" of "slecht", waarbij spanningen snel als probleem worden gezien. Hierdoor ontstaat het idee dat verbondenheid altijd positief en wederzijds moet zijn, terwijl dit in werkelijkheid vaak complexer is.</p>
+                  <p>Vanuit deze context is mijn worlding ontstaan. In deze wereld wordt sociale verbondenheid letterlijk zichtbaar via een schimmel / wortel netwerk dat tussen mensen groeit. Liefde, neutraliteit en haat krijgen elk een eigen vorm in het mycelium. Sommige verbindingen zijn sterk en voedend, andere zijn zwak, scheef of verstikkend. De schimmel heeft hierbij een eigen invloed en laat zien dat relaties niet volledig door mensen te sturen zijn.</p>
+                  <p>Deze worlding maakt het dominante discours tastbaar. Door verbondenheid fysiek zichtbaar te maken, confronteert het project de gebruiker met vragen over privacy, sociale druk en controle. Het laat zien hoe de drang naar zichtbare verbondenheid kan leiden tot verlies van nuance en persoonlijke vrijheid. Zo nodigt mijn worlding uit om anders te kijken naar wat het betekent om verbonden te zijn.</p>
+                  <div class="references" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                    <p style="font-size: 13px; color: #9ca3af; line-height: 1.8;">
+                      <span id="ref1" style="display: inline-block; margin-right: 8px;">1.</span> World Health Organization. (2025, 30 juni). <em>Social connection linked to improved health and reduced risk of early death</em>. <a href="https://www.who.int/philippines/news/detail-global/30-06-2025-social-connection-linked-to-improved-heath-and-reduced-risk-of-early-death" target="_blank" rel="noopener" class="citation-link" style="color: #9ca3af; text-decoration: underline;">https://www.who.int/philippines/news/detail-global/30-06-2025-social-connection-linked-to-improved-heath-and-reduced-risk-of-early-death</a><br>
+                      <span id="ref2" style="display: inline-block; margin-right: 8px;">2.</span> Our World in Data. (2025). <em>Loneliness and social connections</em>. <a href="https://ourworldindata.org/social-connections-and-loneliness" target="_blank" rel="noopener" class="citation-link" style="color: #9ca3af; text-decoration: underline;">https://ourworldindata.org/social-connections-and-loneliness</a><br>
+                      <span id="ref3" style="display: inline-block; margin-right: 8px;">3.</span> Pew Research Center. (2025, 16 januari). <em>Where men and women turn for emotional support and social connection</em>. <a href="https://www.pewresearch.org/2025/01/16/where-men-and-women-turn-for-emotional-support-and-social-connection/" target="_blank" rel="noopener" class="citation-link" style="color: #9ca3af; text-decoration: underline;">https://www.pewresearch.org/2025/01/16/where-men-and-women-turn-for-emotional-support-and-social-connection/</a><br>
+                      <span id="ref4" style="display: inline-block; margin-right: 8px;">4.</span> Pew Research Center. (2025, 22 april). <em>Social media and teens' mental health</em>. <a href="https://www.pewresearch.org/internet/2025/04/22/teens-social-media-and-mental-health/" target="_blank" rel="noopener" class="citation-link" style="color: #9ca3af; text-decoration: underline;">https://www.pewresearch.org/internet/2025/04/22/teens-social-media-and-mental-health/</a>
+                    </p>
+                  </div>
+                </div>
+                <button class="project-text-toggle" id="discursive-text-toggle" aria-expanded="false">
+                  <span class="toggle-text-expand">Lees complete essay</span>
+                  <span class="toggle-text-collapse">Lees minder</span>
+                </button>
+                  <div class="project-actions" style="margin-top: 20px;">
+                    <a class="btn btn--light prototype-btn" href="https://thieuvanbezooijen.nl/Discursive" target="_blank" rel="noopener">
+                      <span class="prototype-btn-text-desktop">Visualisatie bekijken →</span>
+                      <span class="prototype-btn-text-mobile">Visualisatie is alleen beschikbaar op desktop!</span>
+                    </a>
+                  </div>
               </div>
             </header>
-            <div class="project-grid">
-
-            </div>
           </div>
         </section>
         <div class="divider" role="separator" aria-label="Sectiescheiding"></div>
