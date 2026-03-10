@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 
-  // Disable game button on mobile devices
   const gameBtn = document.querySelector('.game-btn');
   if (gameBtn && window.innerWidth <= 768) {
     gameBtn.addEventListener('click', (e) => {
@@ -12,29 +11,24 @@ document.addEventListener('DOMContentLoaded', () => {
     gameBtn.setAttribute('href', '#');
   }
 
-  // Lightbox setup
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxContent = document.getElementById('lightbox-content');
   const backdrop = lightbox ? lightbox.querySelector('[data-close]') : null;
-  const images = Array.from(document.querySelectorAll('.project-grid img, .project-side img, .project-grid-rcs img, .project-side-rcs img, .project-grid-branding img, .project-side-branding img, .project-grid-bold-bottom img, .project-side-bold img, .profile img, .hero-img'));
+  const images = Array.from(document.querySelectorAll('.project-grid img, .project-side img, .project-grid-rcs img, .project-side-rcs img, .project-grid-branding img, .project-side-branding img, .project-grid-bold-bottom img, .project-side-bold img, .project-grid-speculative img, .profile img, .hero-img'));
 
   const openLightbox = (src, alt, zoomPercent, darkBackdrop) => {
     if (!lightbox || !lightboxImg) return;
     lightboxImg.setAttribute('src', src);
     lightboxImg.setAttribute('alt', alt || 'Vergrote afbeelding');
     lightbox.classList.remove('open');
-    // Apply optional darker backdrop
     if (darkBackdrop) lightbox.classList.add('dark'); else lightbox.classList.remove('dark');
     lightbox.removeAttribute('hidden');
-    // Wait a frame to allow initial styles to apply, then add open for transition
     requestAnimationFrame(() => {
       lightbox.classList.add('open');
     });
-    // Default to zoomed so user can pan/scroll to view details
     if (lightboxContent) lightboxContent.classList.add('zoomed');
     lightboxImg.classList.add('zoomed');
-    // Apply per-image zoom if provided (percentage number, e.g. 110)
     const parsedZoom = typeof zoomPercent === 'number' && isFinite(zoomPercent) ? zoomPercent : 110;
     lightboxImg.style.width = parsedZoom + '%';
     document.body.style.overflow = 'hidden';
@@ -43,10 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeLightbox = () => {
     if (!lightbox || !lightboxImg) return;
     lightbox.classList.remove('open');
-    // Match the CSS transition duration (250ms) with a small buffer
     setTimeout(() => lightbox && lightbox.setAttribute('hidden', ''), 260);
     lightboxImg.removeAttribute('src');
-    // Reset zoom state
     lightboxImg.classList.remove('zoomed');
     lightboxContent && lightboxContent.classList.remove('zoomed');
     lightboxImg.style.width = '';
@@ -80,20 +72,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeLightbox();
   });
 
-  // Toggle zoom on the lightbox image
   if (lightboxImg) {
-    // Prevent image click from closing
     lightboxImg.addEventListener('click', (e) => {
       e.stopPropagation();
     });
-    // Keep zoom enabled on load
     lightboxImg.addEventListener('load', () => {
       lightboxImg.classList.add('zoomed');
       lightboxContent && lightboxContent.classList.add('zoomed');
     });
   }
 
-  // Drag to pan when zoomed
   if (lightboxContent) {
     let isPanning = false;
     let startX = 0, startY = 0, scrollLeft = 0, scrollTop = 0;
@@ -124,22 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Reveal-on-scroll animations
-  /* const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!prefersReduced) {
-    const revealEls = Array.from(document.querySelectorAll('.reveal, .reveal-stagger'));
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
-    revealEls.forEach((el) => observer.observe(el));
-  } */
-
-  // Collapsible text for discursive design
   const discursiveToggle = document.getElementById('discursive-text-toggle');
   const discursiveCollapsible = document.getElementById('discursive-text-collapsible');
   if (discursiveToggle && discursiveCollapsible) {
@@ -150,10 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Scroll to top button
   const scrollToTopBtn = document.getElementById('scroll-to-top');
   if (scrollToTopBtn) {
-    const SCROLL_THRESHOLD = 300; // Show button after scrolling 300px
+    const SCROLL_THRESHOLD = 300;
     let ticking = false;
 
     const handleScroll = () => {
@@ -171,13 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    // Check initial scroll position
     handleScroll();
-
-    // Listen for scroll events
     window.addEventListener('scroll', handleScroll, { passive: true });
-
-    // Smooth scroll to top on click
     scrollToTopBtn.addEventListener('click', () => {
       window.scrollTo({
         top: 0,
@@ -187,12 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Minimal interactivity: hover/touch zoom (year already set in DOMContentLoaded)
 (function () {
-
   const zoomables = Array.from(document.querySelectorAll('.hover-zoom'));
-
-  // Improve touch feedback: tap to toggle zoom
   zoomables.forEach(function (img) {
     img.addEventListener('touchstart', function () {
       img.classList.toggle('is-zoomed');
@@ -204,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Make images focusable for keyboard users
     if (!img.hasAttribute('tabindex')) {
       img.setAttribute('tabindex', '0');
       img.setAttribute('role', 'img');
