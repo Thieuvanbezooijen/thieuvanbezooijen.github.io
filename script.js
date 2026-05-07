@@ -13,12 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxPdf = document.getElementById('lightbox-pdf');
   const lightboxContent = document.getElementById('lightbox-content');
+  const cvLink = document.getElementById('cv-link');
   const backdrop = lightbox ? lightbox.querySelector('[data-close]') : null;
   const images = Array.from(document.querySelectorAll('.project-grid img, .project-side img, .project-grid-rcs img, .project-side-rcs img, .project-grid-branding img, .project-side-branding img, .project-grid-bold-bottom img, .project-side-bold img, .project-grid-speculative img, .profile img, .hero-img'));
 
   const openLightbox = (src, alt, zoomPercent, darkBackdrop) => {
     if (!lightbox || !lightboxImg) return;
+    if (lightboxPdf) {
+      lightboxPdf.setAttribute('hidden', '');
+      lightboxPdf.removeAttribute('src');
+    }
+    lightboxImg.removeAttribute('hidden');
     lightboxImg.setAttribute('src', src);
     lightboxImg.setAttribute('alt', alt || 'Vergrote afbeelding');
     lightbox.classList.remove('open');
@@ -34,13 +41,35 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'hidden';
   };
 
+  const openPdfLightbox = (src) => {
+    if (!lightbox || !lightboxPdf || !lightboxImg) return;
+    lightboxImg.setAttribute('hidden', '');
+    lightboxImg.removeAttribute('src');
+    lightboxImg.classList.remove('zoomed');
+    lightboxContent && lightboxContent.classList.remove('zoomed');
+    lightboxPdf.removeAttribute('hidden');
+    lightboxPdf.setAttribute('src', src);
+    lightbox.classList.remove('dark');
+    lightbox.classList.remove('open');
+    lightbox.removeAttribute('hidden');
+    requestAnimationFrame(() => {
+      lightbox.classList.add('open');
+    });
+    document.body.style.overflow = 'hidden';
+  };
+
   const closeLightbox = () => {
     if (!lightbox || !lightboxImg) return;
     lightbox.classList.remove('open');
     setTimeout(() => lightbox && lightbox.setAttribute('hidden', ''), 260);
     lightboxImg.removeAttribute('src');
+    lightboxImg.removeAttribute('hidden');
     lightboxImg.classList.remove('zoomed');
     lightboxContent && lightboxContent.classList.remove('zoomed');
+    if (lightboxPdf) {
+      lightboxPdf.setAttribute('hidden', '');
+      lightboxPdf.removeAttribute('src');
+    }
     lightboxImg.style.width = '';
     document.body.style.overflow = '';
   };
@@ -68,6 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   backdrop && backdrop.addEventListener('click', closeLightbox);
+  if (cvLink) {
+    cvLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      openPdfLightbox('./img/CV.pdf');
+    });
+  }
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
   });
