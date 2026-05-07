@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cvLink) {
     cvLink.addEventListener('click', (e) => {
       e.preventDefault();
-      openPdfLightbox('./img/CV.pdf');
+      openPdfLightbox('./img/Cv.pdf');
     });
   }
   document.addEventListener('keydown', (e) => {
