@@ -1,0 +1,69 @@
+/* Merken page – logo grid like sgdentalshop.com/merken */
+
+.merken-page {
+  padding: 48px 0 72px;
+  background: #fff;
+}
+
+.merken-title {
+  margin: 0 0 48px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.merken-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 48px;
+  width: 100%;
+  align-items: center;
+}
+
+.merken-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  padding: 16px 24px;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: border-color .18s, box-shadow .18s, transform .18s, background .18s;
+}
+.merken-card:hover {
+  text-decoration: none;
+  background: #f7fbfd;
+  border-color: var(--cyan);
+  box-shadow: 0 8px 24px rgba(0, 173, 239, .18);
+  transform: translateY(-3px);
+}
+.merken-card:hover .merken-logo {
+  opacity: 1;
+}
+
+.merken-logo {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+}
+.merken-logo svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+}
+
+@media (max-width: 800px) {
+  .merken-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .merken-title { font-size: 24px; margin-bottom: 32px; }
+}
+
+@media (max-width: 480px) {
+  .merken-grid { grid-template-columns: 1fr; }
+}

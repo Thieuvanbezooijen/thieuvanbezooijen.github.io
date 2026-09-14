@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Winkelwagen | sgdentalshop.com mockup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+  <main class="page">
+    <div class="wrap">
+      <h1>Winkelwagen</h1>
+      <div id="empty" class="notice" style="display:none">Uw winkelwagen is leeg. <a href="merken.html">Bekijk producten</a></div>
+      <table class="cart-table" id="cartTable">
+        <thead><tr><th>Product</th><th>Aantal</th><th></th></tr></thead>
+        <tbody id="cartBody"></tbody>
+      </table>
+      <div class="totals" id="totals" style="display:none">
+        <p><span>Subtotaal</span><span>—</span></p>
+        <p><span>Btw</span><span>—</span></p>
+        <p><strong><span>Totaal</span><span>Inloggen voor prijs</span></strong></p>
+        <button class="btn orange" style="width:100%;margin-top:12px" onclick="alert('Mockup checkout')">Naar afrekenen</button>
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/site.js"></script>
+  <script>
+    pageInit = function () {
+      const items = cart();
+      const body = document.getElementById("cartBody");
+      if (!items.length) {
+        document.getElementById("empty").style.display = "block";
+        document.getElementById("cartTable").style.display = "none";
+        return;
+      }
+      document.getElementById("totals").style.display = "block";
+      body.innerHTML = items.map((it, i) => {
+        const p = PRODUCTS.find((x) => x.id === it.id) || it;
+        return `<tr>
+        <td>
+          <a class="cart-product" href="product.html?id=${it.id}">
+            ${productVisualHTML(p)}
+            <span>
+              <span class="show-brand">${p.brand || ""}</span>
+              <strong>${p.name || it.name}</strong>
+            </span>
+          </a>
+        </td>
+        <td>${it.qty}</td>
+        <td><button onclick="removeItem(${i})">Verwijder</button></td>
+      </tr>`;
+      }).join("");
+    };
+    function removeItem(i) {
+      const items = cart();
+      items.splice(i, 1);
+      saveCart(items);
+      location.reload();
+    }
+  </script>
+</body>
+</html>

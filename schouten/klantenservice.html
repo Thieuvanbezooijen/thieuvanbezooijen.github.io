@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Klantenservice | sgdentalshop.com mockup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+  <main class="page">
+    <div class="wrap">
+      <div class="crumbs"><a href="index.html">Home</a> / Klantenservice</div>
+      <h1>Klantenservice</h1>
+      <p class="lead">Of stel direct uw vraag via het <a href="index.html#contact">contactformulier</a>.</p>
+
+      <div class="cards-3" style="margin-top:24px">
+        <div class="info-card" id="sec-betalen">
+          <h3>Betalen</h3>
+          <p>iDEAL, creditcard, PayPal en op rekening (B2B). Placeholder informatie voor mockup.</p>
+        </div>
+        <div class="info-card" id="sec-bestellen">
+          <h3>Bestellen & leveren</h3>
+          <p>Levering in NL, BE en EU via AGX, DHL, FedEx, UPS. Zie levertijden per product.</p>
+        </div>
+        <div class="info-card" id="sec-leasen">
+          <h3>Leasen van systemen</h3>
+          <p>Lease-opties voor 3D printers en freesmachines – neem contact op voor voorstel.</p>
+        </div>
+        <div class="info-card" id="sec-klachten">
+          <h3>Klachten</h3>
+          <p>Meld klachten via info@sgdentalshop.com of telefonisch. Wij reageren binnen 2 werkdagen.</p>
+        </div>
+      </div>
+
+      <div class="info-card" style="margin-top:24px">
+        <h3>Contact</h3>
+        <p><strong>+31 (0)186 603 600</strong><br>info@sgdentalshop.com<br>Laan van Londen 140, 3317 DA Dordrecht</p>
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/site.js"></script>
+  <script>
+    pageInit = function () {
+      const p = new URLSearchParams(location.search).get("p");
+      if (p) document.getElementById("sec-" + p)?.scrollIntoView({ behavior: "smooth" });
+    };
+  </script>
+</body>
+</html>

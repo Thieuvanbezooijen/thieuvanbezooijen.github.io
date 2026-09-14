@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Categorie | sgdentalshop.com</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+  <main class="page cat-page">
+    <div class="wrap">
+      <div class="crumbs"><a href="index.html">Home</a> / <span id="crumbCat">Categorie</span></div>
+      <header class="cat-head">
+        <h1 id="catTitle">Categorie</h1>
+        <p class="lead" id="catIntro"></p>
+      </header>
+      <div class="showcase" id="grid"></div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/site.js"></script>
+  <script>
+    pageInit = function () {
+      const params = new URLSearchParams(location.search);
+      const brand = params.get("brand");
+      const cat = params.get("cat") || "all";
+      let items;
+      let title;
+      let intro;
+      if (brand) {
+        items = PRODUCTS.filter((p) => p.brand.toLowerCase() === brand.toLowerCase());
+        title = brand;
+        intro = items.length
+          ? "Producten van " + brand + " in het mockup-assortiment."
+          : "Geen producten van dit merk in de mockup.";
+      } else {
+        const meta = CATS[cat] || CATS.all;
+        title = meta.title;
+        intro = meta.intro;
+        items = cat === "all" || cat === "acties" || cat === "merken"
+          ? PRODUCTS
+          : PRODUCTS.filter((p) => p.cat === cat);
+      }
+      document.title = title + " | sgdentalshop.com";
+      document.getElementById("catTitle").textContent = title;
+      document.getElementById("crumbCat").textContent = title;
+      document.getElementById("catIntro").textContent = intro;
+      renderShowcase(document.getElementById("grid"), items);
+    };
+  </script>
+</body>
+</html>

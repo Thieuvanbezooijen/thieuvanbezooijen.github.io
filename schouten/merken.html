@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Merken | sgdentalshop.com</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/merken.css" />
+</head>
+<body class="page-merken">
+  <div id="site-header"></div>
+  <main class="merken-page">
+    <div class="wrap">
+      <h1 class="merken-title">Onze belangrijkste merken</h1>
+
+      <div class="merken-grid" id="merkenGrid"></div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/site.js"></script>
+  <script>
+    const MERKEN_PAGE = [
+      { name: "Schouten Dental", href: "categorie.html?brand=Schouten", svg: "sgdental" },
+      { name: "Asiga", href: "categorie.html?brand=Asiga", svg: "asiga" },
+      { name: "VHF", href: "categorie.html?brand=VHF", svg: "vhf" },
+      { name: "Detax", href: "categorie.html?brand=Detax", svg: "detax" },
+      { name: "WhitePeaks", href: "categorie.html?brand=WhitePeaks", svg: "whitepeaks" },
+      { name: "Pro3dure", href: "categorie.html?cat=hars", svg: "pro3dure" },
+      { name: "Keystone", href: "categorie.html?brand=Keystone", svg: "keystone" },
+      { name: "PostProcess", href: "categorie.html?cat=nabewerking", svg: "postprocess" },
+      { name: "Dekema", href: "categorie.html?brand=Dekema", svg: "dekema" },
+      { name: "Dreve", href: "categorie.html?cat=all", svg: "dreve" },
+      { name: "Hinrichs", href: "categorie.html?cat=all", svg: "hinrichs" },
+      { name: "Saremco", href: "categorie.html?brand=Saremco", svg: "saremco" },
+      { name: "Rayshape", href: "categorie.html?brand=Rayshape", svg: "rayshape" },
+      { name: "HassBio", href: "categorie.html?brand=HassBio", svg: "hass" },
+      { name: "Nabertherm", href: "categorie.html?cat=ovens", svg: "nabertherm" }
+    ];
+
+    const LOGO_SVGS = {
+      sgdental: `<svg viewBox="0 0 280 90" role="img" aria-label="Schouten Dental"><rect width="280" height="90" fill="#fff"/><rect x="24" y="22" width="46" height="46" rx="4" fill="#00adef"/><path fill="#fff" d="M47 30c-4 0-7 2.5-7.8 6-.5 2-.3 4.3.2 6.4.4 1.8.7 3.6.5 5.5-.2 2-1.1 4-1.9 5.9-.4 1.1.3 2.4 1.5 2.4 1 0 1.8-.8 2.2-1.7.8-1.6 1.5-3.4 2.8-4.6 1.1-1 2.5-1.3 3.9-1.3s2.8.3 3.9 1.3c1.3 1.2 2 3 2.8 4.6.4.9 1.2 1.7 2.2 1.7 1.2 0 1.9-1.3 1.5-2.4-.8-1.9-1.7-3.9-1.9-5.9-.2-1.9.1-3.7.5-5.5.5-2.1.7-4.4.2-6.4C54 32.5 51 30 47 30z"/><text x="86" y="44" font-family="Roboto,Arial,sans-serif" font-size="18" font-weight="700" fill="#222">Schouten Dental</text><text x="86" y="64" font-family="Roboto,Arial,sans-serif" font-size="11" fill="#00adef">sgdentalshop.com</text></svg>`,
+
+      asiga: `<svg viewBox="0 0 280 90" role="img" aria-label="Asiga"><rect width="280" height="90" fill="#fff"/><text x="140" y="58" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="42" font-weight="700" letter-spacing="4" fill="#1a1a1a">ASIGA</text></svg>`,
+
+      vhf: `<svg viewBox="0 0 280 90" role="img" aria-label="VHF"><rect width="280" height="90" fill="#fff"/><text x="140" y="58" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="48" font-weight="300" letter-spacing="6" fill="#333">vhf</text></svg>`,
+
+      detax: `<svg viewBox="0 0 280 90" role="img" aria-label="Detax"><rect width="280" height="90" fill="#fff"/><text x="140" y="58" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="38" font-weight="700" letter-spacing="3" fill="#0090c8">DETAX</text></svg>`,
+
+      whitepeaks: `<svg viewBox="0 0 280 90" role="img" aria-label="WhitePeaks"><rect width="280" height="90" fill="#fff"/><path fill="#4a90a8" d="M70 62 L100 28 L130 62 Z"/><text x="148" y="42" font-family="Roboto,Arial,sans-serif" font-size="16" font-weight="700" fill="#333">WHITEPEAKS</text><text x="148" y="60" font-family="Roboto,Arial,sans-serif" font-size="9" letter-spacing="1" fill="#666">DENTAL SOLUTIONS</text></svg>`,
+
+      pro3dure: `<svg viewBox="0 0 280 90" role="img" aria-label="Pro3dure"><rect width="280" height="90" fill="#fff"/><text x="140" y="48" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="26" font-weight="500" fill="#e85d04">pro3dure</text><text x="140" y="68" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="12" fill="#888">medical</text></svg>`,
+
+      keystone: `<svg viewBox="0 0 280 90" role="img" aria-label="Keystone"><rect width="280" height="90" fill="#fff"/><rect x="48" y="28" width="34" height="34" fill="#c41e3a"/><text x="96" y="44" font-family="Roboto,Arial,sans-serif" font-size="18" font-weight="700" fill="#222">Keystone</text><text x="96" y="62" font-family="Roboto,Arial,sans-serif" font-size="12" fill="#666">industries</text></svg>`,
+
+      postprocess: `<svg viewBox="0 0 280 90" role="img" aria-label="PostProcess"><rect width="280" height="90" fill="#fff"/><text x="140" y="54" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="2" fill="#1a1a1a">POSTPROCESS</text></svg>`,
+
+      dekema: `<svg viewBox="0 0 280 90" role="img" aria-label="Dekema"><rect width="280" height="90" fill="#fff"/><text x="140" y="58" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="36" font-weight="700" letter-spacing="4" fill="#003087">DEKEMA</text></svg>`,
+
+      dreve: `<svg viewBox="0 0 280 90" role="img" aria-label="Dreve"><rect width="280" height="90" fill="#fff"/><circle cx="140" cy="45" r="28" fill="#c8102e"/><text x="140" y="52" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="16" font-weight="700" fill="#fff">Dreve</text></svg>`,
+
+      hinrichs: `<svg viewBox="0 0 280 90" role="img" aria-label="Hinrichs"><rect width="280" height="90" fill="#fff"/><path fill="#0055a5" d="M95 62 L140 22 L185 62 Z"/><text x="140" y="78" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="14" font-weight="600" fill="#333">Hinrichs</text></svg>`,
+
+      saremco: `<svg viewBox="0 0 280 90" role="img" aria-label="Saremco"><rect width="280" height="90" fill="#fff"/><text x="140" y="58" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="32" font-weight="700" letter-spacing="2" fill="#0066a1">SAREMCO</text></svg>`,
+
+      rayshape: `<svg viewBox="0 0 280 90" role="img" aria-label="Rayshape"><rect width="280" height="90" fill="#fff"/><text x="140" y="58" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="1" fill="#00a3e0">RAYSHAPE</text></svg>`,
+
+      hass: `<svg viewBox="0 0 280 90" role="img" aria-label="HassBio"><rect width="280" height="90" fill="#fff"/><text x="140" y="58" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="40" font-weight="700" letter-spacing="6" fill="#1a1a1a">HASS</text></svg>`,
+
+      nabertherm: `<svg viewBox="0 0 280 90" role="img" aria-label="Nabertherm"><rect width="280" height="90" fill="#fff"/><rect x="36" y="28" width="40" height="34" fill="#ffcc00"/><rect x="36" y="28" width="40" height="8" fill="#1a1a1a"/><text x="90" y="52" font-family="Roboto,Arial,sans-serif" font-size="20" font-weight="700" fill="#1a1a1a">Nabertherm</text></svg>`
+    };
+
+    pageInit = function () {
+      const grid = document.getElementById("merkenGrid");
+      if (!grid) return;
+      grid.innerHTML = MERKEN_PAGE.map((b) =>
+        `<a class="merken-card" href="${b.href}" aria-label="${b.name}">
+          <span class="merken-logo">${LOGO_SVGS[b.svg]}</span>
+        </a>`
+      ).join("");
+    };
+  </script>
+</body>
+</html>

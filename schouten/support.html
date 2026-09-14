@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support | sgdentalshop.com</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/support.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+  <main class="support-page">
+    <div class="wrap">
+      <div class="crumbs"><a href="index.html">Home</a> / Support</div>
+      <header class="support-hero">
+        <div>
+          <h1>Support</h1>
+          <p>Technische hulp bij 3D-printers, freesmachines en nabewerking.</p>
+        </div>
+      </header>
+
+      <section class="support-cats">
+        <a class="support-cat" href="#docs">
+          <span class="support-cat-label">3D-printers</span>
+          <strong>Asiga</strong>
+          <span>Software, hardware, kalibratie &amp; troubleshooting</span>
+        </a>
+        <a class="support-cat" href="#docs">
+          <span class="support-cat-label">3D-printers</span>
+          <strong>Rayshape</strong>
+          <span>Installatie Edge Mini &amp; Edge E2</span>
+        </a>
+        <a class="support-cat" href="#docs">
+          <span class="support-cat-label">Nabewerking</span>
+          <strong>Post-process</strong>
+          <span>Wash, cure &amp; cleaners</span>
+        </a>
+        <a class="support-cat" href="reparatie.html">
+          <span class="support-cat-label">Freesmachines</span>
+          <strong>VHF</strong>
+          <span>Onderhoud, spindel, CAM &amp; kalibratie</span>
+        </a>
+      </section>
+
+      <section class="support-docs" id="docs">
+        <div class="support-section-head">
+          <h2>Asiga documentatie</h2>
+          <p>Kies je printer of onderwerp voor manuals en tips.</p>
+        </div>
+        <div class="docs-grid">
+          <a href="#">Asiga Max</a>
+          <a href="#">Asiga Max 2</a>
+          <a href="#">Asiga Max X</a>
+          <a href="#">Asiga Ultra</a>
+          <a href="#">Asiga Pro 4K</a>
+          <a href="#">Asiga Cure</a>
+          <a href="#">Composer software</a>
+          <a href="#">Materialen</a>
+          <a href="#">Build trays</a>
+          <a href="#">Post-processing</a>
+          <a href="#">Pro / Pro2</a>
+          <a href="#">Pico-serie</a>
+        </div>
+      </section>
+
+      <section class="ticket-band" id="ticket">
+        <div class="ticket-intro">
+          <p class="ticket-kicker">Hulp nodig?</p>
+          <h2>Open een support ticket</h2>
+          <p>Werkt je machine niet zoals verwacht? Stuur een ticket. Asiga en ons team kijken mee.</p>
+          <ol class="ticket-steps">
+            <li>
+              <span class="step-num">1</span>
+              <span><strong>Serienummer</strong><br>staat op de machine of in je account</span>
+            </li>
+            <li>
+              <span class="step-num">2</span>
+              <span><strong>Diagnostic report</strong><br>Composer → printer → Help → Diagnostic Report</span>
+            </li>
+            <li>
+              <span class="step-num">3</span>
+              <span><strong>Omschrijving + foto</strong><br>wat gaat er mis en wat heb je al geprobeerd</span>
+            </li>
+          </ol>
+        </div>
+        <form class="ticket-form" onsubmit="event.preventDefault(); alert('Mockup: support ticket verzonden.');">
+          <h3>Vul je ticket in</h3>
+          <label>
+            1. Product / machine*
+            <select required>
+              <option value="">Kies een product</option>
+              <option>Asiga Ultra</option>
+              <option>Asiga Max 2</option>
+              <option>Asiga Max X</option>
+              <option>Asiga Pro 4K</option>
+              <option>Asiga Cure</option>
+              <option>Rayshape Edge</option>
+              <option>Post-process systeem</option>
+              <option>VHF freesmachine</option>
+              <option>Anders</option>
+            </select>
+          </label>
+          <label>
+            2. Serienummer*
+            <input required placeholder="Bijv. ASG-123456" />
+          </label>
+          <label class="ticket-full">
+            3. Wat is het probleem?*
+            <textarea required rows="4" placeholder="Wat gebeurt er? Welke stappen heb je al geprobeerd?"></textarea>
+          </label>
+          <label class="ticket-full ticket-upload">
+            4. Bijlagen (report, foto of video)
+            <span class="upload-box">Sleep bestanden hierheen<br><small>of klik om te uploaden</small></span>
+            <input type="file" multiple hidden />
+          </label>
+          <button class="btn cyan ticket-submit" type="submit">Ticket versturen</button>
+        </form>
+      </section>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/site.js"></script>
+  <script>
+    pageInit = function () {
+      const box = document.querySelector(".upload-box");
+      const input = document.querySelector('.ticket-upload input[type="file"]');
+      if (box && input) {
+        box.addEventListener("click", () => input.click());
+        input.addEventListener("change", () => {
+          const n = input.files?.length || 0;
+          box.innerHTML = n
+            ? `<strong>${n} bestand(en) geselecteerd</strong><br><small>mockup – niet echt geüpload</small>`
+            : `Sleep bestanden hierheen<br><small>of klik om te uploaden</small>`;
+        });
+      }
+    };
+  </script>
+</body>
+</html>
